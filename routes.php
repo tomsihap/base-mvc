@@ -4,18 +4,17 @@
 $router = new Router();
 
 // example.com
-$router->get('/', 'PagesController@home' );
+$router->get('', 'PagesController@home' );
 
 // example.com/about
-$router->get('/about', 'PagesController@about');
+$router->get('about', 'PagesController@about');
 
-$router->get('/contactez-nous', 'PagesController@contact');
-$router->post('/contactez-nous', 'PagesController@traitementForm');
+$router->get('contactez-nous', 'PagesController@contact');
+$router->post('contactez-nous', 'PagesController@traitementForm');
 
-
-// example.com/articles
-$router->get('/articles', 'ArticlesController@index');
-
+$router->get('ajouter-article', 'ArticlesController@add');
+$router->post('ajouter-article', 'ArticlesController@save');
+$router->get('article', 'ArticlesController@show');
 
 // Run it!
 $router->run();
